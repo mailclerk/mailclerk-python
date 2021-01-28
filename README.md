@@ -91,7 +91,7 @@ mailclerk.deliver("welcome-email", "bob@example.com")
 
 ## Tests
 
-Tests aren't currently implemented. 
+Tests aren't currently implemented.
 
 ## Versioning
 
