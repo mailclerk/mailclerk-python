@@ -5,6 +5,14 @@ from mailclerk import __version__
 class MailclerkError(Exception):
     pass
     
+class MailclerkAPIError(MailclerkError):
+    def __init__(self, description, http_status=None, http_response=None):
+        super(MailclerkError, self).__init__(description)
+        
+        self.http_status = http_status
+        self.http_response = http_response
+    
+
 class MailclerkAPIClient():
     def __init__(self, api_key, api_url):
         self.api_url = api_url
@@ -31,5 +39,17 @@ class MailclerkAPIClient():
                 'Authorization': "Basic %s" % token
             }
         )
+        
+        if response.status_code >= 400:
+            try:
+                description = "MailclerkError API Error: %s" % response.json()["message"]
+            except:
+                description = "MailclerkError API Unknown Error"
+                
+            raise MailclerkAPIError(
+                description,
+                http_status=response.status_code,
+                http_response=response
+            )
         
         return response
