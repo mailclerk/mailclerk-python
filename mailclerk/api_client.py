@@ -42,9 +42,9 @@ class MailclerkAPIClient():
         
         if response.status_code >= 400:
             try:
-                description = "MailclerkError API Error: %s" % response.json()["message"]
+                description = "Mailclerk API Error: %s" % response.json()["message"]
             except:
-                description = "MailclerkError API Unknown Error"
+                description = "Mailclerk API Unknown Error"
                 
             raise MailclerkAPIError(
                 description,
