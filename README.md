@@ -14,8 +14,9 @@ Mailclerk helps anyone on your team design great emails, improve their performan
 - [Setup](#setup)
 - [API Key & URL](#api-key--url)
 - [Usage](#usage)
+- [Testing](#testing)
 - [Varying API Keys](#changing-api-keys)
-- [Tests](#tests)
+- [Gem Tests](#gem-tests)
 - [Versioning](#versioning)
 - [Code of Conduct](#code-of-conduct)
 - [Contributions](#contributions)
@@ -72,6 +73,12 @@ mailclerk.deliver("welcome-email", "alice@example.com", { name: "Alice" })
 
 See [Mailclerk documentation](https://dashboard.mailclerk.app/docs) for more details.
 
+## Testing
+
+Test support is not yet implemented for the python SDK. Refer to the
+[Ruby SDK](https://github.com/mailclerk/mailclerk-ruby#testing)
+to see how it will function, when implemented.
+
 ## Varying API Keys
 
 If you need to use multiple API keys, you can also initialize `mailclerk.MailclerkAPIClient`
@@ -89,7 +96,7 @@ mailclerk.api_key = "mc_yourprivatekey"
 mailclerk.deliver("welcome-email", "bob@example.com")
 ```
 
-## Tests
+## Gem Tests
 
 Tests aren't currently implemented.
 
