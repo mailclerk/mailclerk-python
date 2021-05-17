@@ -146,11 +146,13 @@ mailclerk.deliver("welcome-email", "bob@example.com")
 ## Package Tests
 
 Install test dependencies:
+
 ```
 pip install .[test]
 ```
 
 Run with:
+
 ```
 python -m unittest discover
 ```
