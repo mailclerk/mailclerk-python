@@ -30,4 +30,9 @@ setup(
         'requests >= 2.20; python_version >= "3.0"',
         'requests[security] >= 2.20; python_version < "3.0"',
     ],
+    extras_require={
+        'test': [
+            "python-dotenv"
+        ]
+    }
 )
